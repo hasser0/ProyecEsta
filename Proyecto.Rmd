@@ -12,3 +12,14 @@ cat_data = aggregate(data.frame(count = cat_id),
                      length)
 barplot(height = cat_data[,2],names.arg = cat_data[,1])
 ```
+
+#Tema 1 Introducción a la Estadística
+
+
+#Tema 2 Muestreo y Tema 4 Distribuciones muestrales
+
+
+#Tema 5 Estimación puntual y por intervalo
+
+
+#Tema 6: Pruebas de hipótesis paramétricas
