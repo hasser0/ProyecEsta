@@ -1,0 +1,10 @@
+Referencias que sirven
+
+https://www.youtube.com/watch?v=SFpzr21Pavg&ab_channel=Dr.BharatendraRai
+
+https://www.youtube.com/watch?v=d8tj0-QZU_s&ab_channel=CursodeRyLaTeX.
+
+https://www.youtube.com/watch?v=YXSp6VfZaUk&ab_channel=Dr.BharatendraRai
+
+esconder codigo 
+https://bookdown.org/yihui/rmarkdown-cookbook/hide-one.html
