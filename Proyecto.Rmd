@@ -20,7 +20,7 @@ kable(table_desc,align=rep('c', 5))
 table_desc = matrix(NA,nrow=8,ncol=3)
 colnames(table_desc) = c("X1","X2","X3")
 rownames(table_desc) = c("Mínimo","q1","q2","q3","Media","Máximo","Desviación estándar","Moda")
-data <- read.csv("mexico_youtube_21_24_01.csv")
+data <- read.csv("mexico_youtube.csv")
 X1 = data$categoryId
 X2 = data$view_count
 X3 = data$likes/(data$likes+data$dislikes)
