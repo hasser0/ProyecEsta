@@ -4,16 +4,40 @@ author:
 output: pdf_document
 ---
 
-```{r,echo = FALSE}
-data <- read.csv("mexico_youtube_21_24_01.csv")
-cat_id = data$categoryId
-cat_data = aggregate(data.frame(count = cat_id),
-                     list(value = cat_id),
-                     length)
-barplot(height = cat_data[,2],names.arg = cat_data[,1])
-```
 
 # Tema 1 Introducción a la Estadística
+```{r,echo = FALSE}
+library(knitr)
+table_desc = matrix(NA,nrow=2,ncol=3)
+colnames(table_desc) = c("X1","X2","X3")
+rownames(table_desc) = c("Tipo","Escala de medición")
+table_desc[1,] = c("Cualitativa","Cuantitativa","Cuantitativa")
+table_desc[2,] = c("Nominal Cualitativa","Razón Cuantitativa","Razón Cuantitativa")
+kable(table_desc,align=rep('c', 5))
+```
+
+```{r, echo = FALSE}
+table_desc = matrix(NA,nrow=8,ncol=3)
+colnames(table_desc) = c("X1","X2","X3")
+rownames(table_desc) = c("Mínimo","q1","q2","q3","Media","Máximo","Desviación estándar","Moda")
+data <- read.csv("mexico_youtube_21_24_01.csv")
+X1 = data$categoryId
+X2 = data$view_count
+X3 = data$likes/(data$likes+data$dislikes)
+mode <- function(v) {
+   uniqv <- unique(v)
+   uniqv[which.max(tabulate(match(v, uniqv)))]
+}
+table_desc[1,] = c("-",min(X2),min(X3))
+table_desc[2,] = c("-",quantile(X2,prob=0.25),quantile(X3,prob=0.25))
+table_desc[3,] = c("-",quantile(X2,prob=0.50),quantile(X3,prob=0.50))
+table_desc[4,] = c("-",quantile(X2,prob=0.75),quantile(X3,prob=0.75))
+table_desc[5,] = c("-",mean(X2),mean(X3))
+table_desc[6,] = c("-",max(X2),max(X3))
+table_desc[7,] = c("-",sd(X2),sd(X3))
+table_desc[8,] = c(mode(X1),mode(X2),mode(X3))
+kable(table_desc,align=rep('c', 5))
+```
 
 
 # Tema 2 Muestreo y Tema 4 Distribuciones muestrales
